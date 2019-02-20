@@ -16,6 +16,7 @@ class sloth:
 
         self.graph = tf.get_default_graph()
         self.model = load_model(self.model_path)
+        self.model.summary()
         self.window = np.empty((1,self.window_size,self.feature_size))
         self.window[:] = np.nan
 
@@ -30,6 +31,7 @@ class sloth:
         self.peaks = np.zeros((1,self.class_size))
 
         self.gestures = []
+        self.prob_mean = []
 
     def classify(self):
         if not np.any(np.isnan(self.window)):
@@ -62,6 +64,7 @@ class sloth:
                 if prob_mean > self.tau[ids]:
                     self.peaks[0, ids] = 0
                     self.gestures.append(ids+1)
+                    self.prob_mean.append(prob_mean)
 
     def window_update(self, x, y, z):
         self.window = np.roll(self.window,self.window_size-1,1)
@@ -108,4 +111,6 @@ class sloth:
     def get_gesures(self):
         temp = self.gestures
         self.gestures = []
-        return temp
+        temp2 = self.prob_mean
+        self.prob_mean = []
+        return temp, temp2

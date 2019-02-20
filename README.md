@@ -2,6 +2,7 @@ SLOTH, is a method that uses a Long Short Term Memory Recurren Neural Network (L
 
 The repository contains a python implementation of SLOTH able to recognize the six gestures contained in the "gestures_images" folder. 
 The node publishes the recognized command, along with its accurancy, onto the relative topic /smartwatch/<command>.
+This project is used jointly with the "gesture based interface for Baxter robot" project (https://github.com/EmaroLab/gesture_based_interface), so it depends on it.
 
 ## Repository content
 

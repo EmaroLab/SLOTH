@@ -10,6 +10,7 @@ project(sloth_gesture_recognition)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
+  baxter_gbi_input_msgs
 )
 
 ## System dependencies are found with CMake's conventions

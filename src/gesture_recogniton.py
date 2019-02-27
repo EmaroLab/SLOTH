@@ -83,7 +83,6 @@ def main():
             pub[ges - 1].publish(msg)
             i = i + 1
             
-
         r.sleep()
 
 if __name__ == '__main__':

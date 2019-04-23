@@ -73,42 +73,7 @@ class sloth:
         self.window[:,-1,2] = z
         self.time += 1
 
-    def display(self):
-        plt.clf()
-        plt.figure(1)
-        plt.subplot(911)
-        plt.plot(range(0,self.probabilities_size),self.probabilities[0,:,0])
-        plt.axis([0, self.probabilities_size, -0.5, 1.5])
-        plt.subplot(912)
-        plt.plot(range(0,self.probabilities_size),self.probabilities[0,:,1])
-        plt.axis([0, self.probabilities_size, -0.5, 1.5])
-        plt.subplot(913)
-        plt.plot(range(0,self.probabilities_size),self.probabilities[0,:,4])
-        plt.axis([0, self.probabilities_size, -0.5, 1.5])
-        plt.subplot(914)
-        plt.plot(range(0,self.probabilities_size),self.probabilities[0,:,5])
-        plt.axis([0, self.probabilities_size, -0.5, 1.5])
-        plt.subplot(915)
-        plt.plot(range(0,self.probabilities_size),self.probabilities[0,:,2])
-        plt.axis([0, self.probabilities_size, -0.5, 1.5])
-        plt.subplot(916)
-        plt.plot(range(0,self.probabilities_size),self.probabilities[0,:,3])
-        plt.axis([0, self.probabilities_size, -0.5, 1.5])
-
-        plt.subplot(917)
-        plt.plot(range(0,self.window_size),self.window[0,:,0])
-        plt.axis([0, self.window_size, -10, 10])
-        plt.subplot(918)
-        plt.plot(range(0,self.window_size),self.window[0,:,1])
-        plt.axis([0, self.window_size, -10, 10])
-        plt.subplot(919)
-        plt.plot(range(0,self.window_size),self.window[0,:,2])
-        plt.axis([0, self.window_size, -10, 10])
-        
-        plt.ion()
-        plt.pause(0.05)
-
-    def get_gesures(self):
+    def get_gestures(self):
         temp = self.gestures
         self.gestures = []
         temp2 = self.prob_mean
